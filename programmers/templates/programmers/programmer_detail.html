@@ -1,0 +1,20 @@
+{% extends 'programmers/base.html' %}
+
+{% block page_title %}{{ programmer.user.get_full_name }}'s Details{% endblock %}
+
+{% block content %}
+  <h1>{{ programmer.user.get_full_name }}'s Details</h1>
+  <p>Age: {{ programmer.age }}</p>
+  <p>Language: {{ programmer.language }}</p>
+  <p>Framework: {{ programmer.framework }}</p>
+  <p>Experience: {{ programmer.experience }} years</p>
+
+  <h2>Projects</h2>
+  <ul>
+    {% for project in projects %}
+      <li>{{ project.name }}: {{ project.description }}</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'add_project' programmer.id %}">Add New Project</a>
+  <a href="{% url 'programmer_list' %}">Back to Programmer List</a>
+{% endblock %}

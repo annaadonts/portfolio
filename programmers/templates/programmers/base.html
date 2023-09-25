@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block page_title %}My Portfolio{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'programmer_list' %}">Programmers</a></li>
+                <!-- Add additional navigation links here -->
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <footer>
+        &copy; {{ year }} My Portfolio. All rights reserved.
+    </footer>
+</body>
+</html>
+

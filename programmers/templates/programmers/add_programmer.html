@@ -1,0 +1,13 @@
+{% extends 'programmers/base.html' %}
+
+{% block page_title %}Add New Programmer{% endblock %}
+
+{% block content %}
+  <h1>Add New Programmer</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Programmer</button>
+  </form>
+  <a href="{% url 'programmer_list' %}">Back to Programmer List</a>
+{% endblock %}

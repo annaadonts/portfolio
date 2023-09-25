@@ -1,0 +1,13 @@
+{% extends 'programmers/base.html' %}
+
+{% block page_title %}Programmers List{% endblock %}
+
+{% block content %}
+  <h1>Programmers</h1>
+  <ul>
+    {% for programmer in programmers %}
+      <li><a href="{% url 'programmer_detail' programmer.id %}">{{ programmer.user.first_name }} {{ programmer.user.last_name }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'add_programmer' %}">Add New Programmer</a>
+{% endblock %}
